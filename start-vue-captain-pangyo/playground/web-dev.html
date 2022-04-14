@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    // $('#app')
+    var div = document.querySelector('#app');
+    // console.log(div);
+    // div.innerHTML = 'hello world';
+    var str = 'hello world'; 
+    div.innerHTML = str;
+
+    str = 'hello world!!'; // 이 코드 만으로 화면의 텍스트가 변경되지는 않음 당연함
+    div.innerHTML = str; // 새로 접근해서 innerHTML로 넣어주어야 변경됨
+
+  </script>
+</body>
+</html>
