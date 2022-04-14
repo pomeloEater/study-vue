@@ -1,18 +1,55 @@
-# Study Vue.js
+# Vue.js 시작하기
 
-## 소장도서
+## using CDN
 
-- <Vue.js 프로젝트 투입 일주일 전>, 고승원, 비제이퍼블릭, 2021년
+### 강의
 
-## 소장강의
+```
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+```
 
-Vue.js로 완성하는 프론트엔드 개발자 로드맵(By 장기효(캡틴판교)) 로드맵 진행 중
+### Vue.js 홈페이지
 
-- [인프런 Vue.js 시작하기](https://www.inflearn.com/course/age-of-vuejs)
-  - [Github Repository](https://github.com/joshua1988/learn-vue-js)
+```
+<script src="https://unpkg.com/vue@3"></script>
 
-## 북마크
+<div id="app">{{ message }}</div>
 
-- [Vue.js 홈페이지](https://vuejs.org/)
-- [Vue.js 한국어 홈페이지(v3)](https://v3.ko.vuejs.org/)
-- [Cracking Vue.js](https://joshua1988.github.io/vue-camp/)
+<script>
+  Vue.createApp({
+    data() {
+      return {
+        message: 'Hello Vue!'
+      }
+    }
+  }).mount('#app')
+</script>
+```
+
+## 목차
+
+- Vue.js의 이해
+  - MVVM
+  - Reactivity
+  - vue.js developer tool
+- 인스턴스 instance
+- 컴포넌트 component
+  - 전역 컴포넌트
+  - 지역 컴포넌트
+- 컴포넌트 통신
+  - props (parent -> child)
+  - event emit (child -> parent)
+- 라우터 router
+- HTTP 비동기 통신 (using axios)
+- 템플릿 template 문법
+  - data binding with mustache (=보간법 interpolation)
+  - 디렉티브 custom directives
+    - v-if/v-else
+    - v-bind
+    - v-on:eventType
+    - v-show
+    - v-model
+    - 수식어 modifier
+- 프로젝트 생성 도구 Vue CLI
+- 싱글 파일 컴포넌트
+- 최종 프로젝트 : 사용자 입력 폼 만들기
