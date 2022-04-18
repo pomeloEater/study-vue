@@ -28,9 +28,9 @@ export default {
   },
   methods: {
     addTodo() {
-      // console.log(this.newTodoItem);
       if (this.newTodoItem !== '') { // 빈 값이 아닐 때 localStorage에 추가해주기
-        this.$emit('addTodoItem', this.newTodoItem);
+        // this.$emit('addTodoItem', this.newTodoItem);
+        this.$store.commit('addOneItem', this.newTodoItem);
         this.clearInput();
       } else {
         this.showModal = !this.showModal;
