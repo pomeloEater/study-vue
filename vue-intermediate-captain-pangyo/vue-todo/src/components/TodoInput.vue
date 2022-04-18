@@ -20,14 +20,14 @@
 import AlertModal from './common/AlertModal.vue'
 
 export default {
-  data: function() {
+  data() {
     return {
       newTodoItem: '',
       showModal: false,
     }
   },
-  methods: {      
-    addTodo: function() {
+  methods: {
+    addTodo() {
       // console.log(this.newTodoItem);
       if (this.newTodoItem !== '') { // 빈 값이 아닐 때 localStorage에 추가해주기
         this.$emit('addTodoItem', this.newTodoItem);
@@ -36,7 +36,7 @@ export default {
         this.showModal = !this.showModal;
       }
     },
-    clearInput: function() {
+    clearInput() {
       this.newTodoItem = '';
     }
   },
