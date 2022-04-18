@@ -4,15 +4,26 @@
     <span class="addContainer" v-on:click="addTodo">
       <i class="fa-solid fa-plus addBtn"></i>
     </span>
+
+    <alert-modal v-if="showModal" @close="showModal = false">
+      <h3 slot="header">
+        경고!
+        <i class="fa-solid fa-circle-xmark closeModalBtn"
+          @click="showModal = false"></i>
+      </h3>
+      <div slot="body">내용을 입력하여 주십시오.</div>
+    </alert-modal>
   </div>
 </template>
 
 <script>
+import AlertModal from './common/AlertModal.vue'
 
 export default {
   data: function() {
     return {
-      newTodoItem: ''
+      newTodoItem: '',
+      showModal: false,
     }
   },
   methods: {      
@@ -21,11 +32,16 @@ export default {
       if (this.newTodoItem !== '') { // 빈 값이 아닐 때 localStorage에 추가해주기
         this.$emit('addTodoItem', this.newTodoItem);
         this.clearInput();
+      } else {
+        this.showModal = !this.showModal;
       }
     },
     clearInput: function() {
       this.newTodoItem = '';
     }
+  },
+  components: {
+    'alert-modal':AlertModal
   }
 }
 </script>
@@ -55,5 +71,12 @@ input:focus {
 .addBtn {
   color: white;
   vertical-align: middle;
+}
+
+.closeModalBtn {
+  color: #42b983;
+  float: right;
+  font-size: 2rem;
+  margin-left: -2rem;
 }
 </style>
