@@ -19,9 +19,7 @@ export default {
     addTodo: function() {
       // console.log(this.newTodoItem);
       if (this.newTodoItem !== '') { // 빈 값이 아닐 때 localStorage에 추가해주기
-        var obj = {completed:false, item:this.newTodoItem}; 
-        localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
-        // localStorage.setItem(this.newTodoItem, obj); // [object Object]
+        this.$emit('addTodoItem', this.newTodoItem);
         this.clearInput();
       }
     },
